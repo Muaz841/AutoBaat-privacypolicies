@@ -2,31 +2,460 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Privacy Policy for AutoBaat</title>
-  <style>body { font-family: Arial, sans-serif; max-width: 800px; margin: 40px auto; padding: 20px; background: #0f172a; color: #f1f5f9; line-height: 1.6; }</style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy - AutoBaat</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-primary: #0a0e1a;
+      --bg-secondary: #111827;
+      --bg-card: #1a2332;
+      --accent: #3b82f6;
+      --accent-light: #60a5fa;
+      --text-primary: #f8fafc;
+      --text-secondary: #cbd5e1;
+      --text-muted: #94a3b8;
+      --border: #293548;
+      --shadow: rgba(0, 0, 0, 0.3);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: linear-gradient(135deg, var(--bg-primary) 0%, #0f1419 100%);
+      color: var(--text-primary);
+      line-height: 1.7;
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      animation: fadeIn 0.8s ease-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Header Section */
+    .header {
+      text-align: center;
+      padding: 60px 20px;
+      margin-bottom: 40px;
+      position: relative;
+    }
+
+    .header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100px;
+      height: 4px;
+      background: linear-gradient(90deg, var(--accent), var(--accent-light));
+      border-radius: 2px;
+    }
+
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem;
+      font-weight: 700;
+      background: linear-gradient(135deg, var(--accent-light), var(--accent));
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 12px;
+      letter-spacing: -1px;
+    }
+
+    .subtitle {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 16px;
+    }
+
+    .updated {
+      display: inline-block;
+      background: var(--bg-card);
+      padding: 8px 20px;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      border: 1px solid var(--border);
+    }
+
+    /* Content Card */
+    .content {
+      background: var(--bg-card);
+      border-radius: 16px;
+      padding: 48px;
+      box-shadow: 0 8px 32px var(--shadow);
+      border: 1px solid var(--border);
+      margin-bottom: 40px;
+    }
+
+    .intro {
+      font-size: 1.05rem;
+      color: var(--text-secondary);
+      line-height: 1.8;
+      margin-bottom: 48px;
+      padding-bottom: 32px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    /* Section Styling */
+    .section {
+      margin-bottom: 48px;
+      padding-left: 24px;
+      border-left: 3px solid var(--accent);
+      animation: slideIn 0.6s ease-out backwards;
+    }
+
+    .section:nth-child(2) { animation-delay: 0.1s; }
+    .section:nth-child(3) { animation-delay: 0.2s; }
+    .section:nth-child(4) { animation-delay: 0.3s; }
+    .section:nth-child(5) { animation-delay: 0.4s; }
+    .section:nth-child(6) { animation-delay: 0.5s; }
+    .section:nth-child(7) { animation-delay: 0.6s; }
+
+    @keyframes slideIn {
+      from { opacity: 0; transform: translateX(-20px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.75rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .section-title::before {
+      content: '';
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      background: var(--accent);
+      border-radius: 50%;
+      box-shadow: 0 0 12px var(--accent);
+    }
+
+    .section-content {
+      color: var(--text-secondary);
+      font-size: 1rem;
+      line-height: 1.8;
+    }
+
+    .section-content p {
+      margin-bottom: 16px;
+    }
+
+    /* Lists */
+    ul {
+      list-style: none;
+      margin: 16px 0;
+      padding-left: 0;
+    }
+
+    ul li {
+      position: relative;
+      padding-left: 32px;
+      margin-bottom: 12px;
+      color: var(--text-secondary);
+    }
+
+    ul li::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      color: var(--accent-light);
+      font-weight: 600;
+    }
+
+    /* Highlight Boxes */
+    .highlight {
+      background: rgba(59, 130, 246, 0.1);
+      border-left: 4px solid var(--accent);
+      padding: 20px 24px;
+      margin: 24px 0;
+      border-radius: 8px;
+      font-size: 0.95rem;
+    }
+
+    .highlight strong {
+      color: var(--accent-light);
+    }
+
+    /* Contact Section */
+    .contact-box {
+      background: linear-gradient(135deg, rgba(59, 130, 246, 0.15), rgba(96, 165, 250, 0.1));
+      padding: 32px;
+      border-radius: 12px;
+      margin-top: 40px;
+      text-align: center;
+      border: 1px solid var(--accent);
+    }
+
+    .contact-box h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      margin-bottom: 16px;
+      color: var(--text-primary);
+    }
+
+    .contact-email {
+      display: inline-block;
+      background: var(--bg-secondary);
+      padding: 12px 28px;
+      border-radius: 8px;
+      color: var(--accent-light);
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      border: 1px solid var(--border);
+      font-family: 'Inter', sans-serif;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    .contact-email:hover {
+      background: var(--accent);
+      color: white;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 16px rgba(59, 130, 246, 0.3);
+      cursor: pointer;
+    }
+
+    .contact-email:active {
+      transform: translateY(0);
+    }
+
+    .copied-notification {
+      display: inline-block;
+      margin-left: 12px;
+      padding: 6px 16px;
+      background: #10b981;
+      color: white;
+      border-radius: 6px;
+      font-size: 0.85rem;
+      opacity: 0;
+      transform: translateY(-10px);
+      transition: all 0.3s ease;
+      pointer-events: none;
+    }
+
+    .copied-notification.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Footer */
+    .footer {
+      text-align: center;
+      padding: 40px 20px;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    .agreement {
+      background: var(--bg-secondary);
+      padding: 24px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      text-align: center;
+      font-style: italic;
+      color: var(--text-secondary);
+      margin-top: 32px;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .logo {
+        font-size: 2rem;
+      }
+
+      .subtitle {
+        font-size: 1.2rem;
+      }
+
+      .content {
+        padding: 32px 24px;
+      }
+
+      .section-title {
+        font-size: 1.4rem;
+      }
+
+      .header {
+        padding: 40px 20px;
+      }
+    }
+  </style>
 </head>
 <body>
-  <h1>Privacy Policy for AutoBaat</h1>
-  <p>Last updated: March 9, 2026</p>
-  AutoBaat-privacypolicies
-Privacy Policy for AutoBaat Last updated: March 9, 2026
+  <div class="container">
+    <!-- Header -->
+    <header class="header">
+      <h1 class="logo">AutoBaat</h1>
+      <h2 class="subtitle">Privacy Policy</h2>
+      <span class="updated">Last Updated: March 9, 2026</span>
+    </header>
 
-This Privacy Policy explains how AutoBaat (“we”, “us”, “our”) collects, uses, stores, and protects data when you use our service. We comply with applicable laws, including the Pakistan Personal Data Protection Bill (PDPB) and GDPR equivalents.
+    <!-- Main Content -->
+    <div class="content">
+      <div class="intro">
+        This Privacy Policy explains how AutoBaat ("we", "us", "our") collects, uses, stores, and protects data when you use our service. We comply with applicable laws, including the Pakistan Personal Data Protection Bill (PDPB) and GDPR equivalents.
+      </div>
 
-What data we collect When a business connects their Instagram or WhatsApp account to our platform via Meta APIs, we receive and process:
-Messages sent by their customers (text, images, media) Customer identifiers (phone numbers, usernames) Business account information (only as needed for automation) We do not collect data from children under 13, and our service is not directed at children.
+      <!-- Section 1: Data Collection -->
+      <section class="section">
+        <h3 class="section-title">What Data We Collect</h3>
+        <div class="section-content">
+          <p>When a business connects their Instagram or WhatsApp account to our platform via Meta APIs, we receive and process:</p>
+          <ul>
+            <li>Messages sent by their customers (text, images, media)</li>
+            <li>Customer identifiers (phone numbers, usernames)</li>
+            <li>Business account information (only as needed for automation)</li>
+          </ul>
+          <div class="highlight">
+            <strong>Important:</strong> We do not collect data from children under 13, and our service is not directed at children.
+          </div>
+        </div>
+      </section>
 
-How we use the data and purposes of processing We use the data for the following purposes (based on consent from the business owner and legitimate interest in providing the service):
-To provide messaging automation (auto-replies, order detection) To maintain conversation context so replies make sense To improve our AI (messages are stored anonymously for future model training) We process data only as necessary for the service and do not use it for advertising or unrelated purposes.
+      <!-- Section 2: Data Usage -->
+      <section class="section">
+        <h3 class="section-title">How We Use the Data</h3>
+        <div class="section-content">
+          <p>We use the data for the following purposes (based on consent from the business owner and legitimate interest in providing the service):</p>
+          <ul>
+            <li>To provide messaging automation (auto-replies, order detection)</li>
+            <li>To maintain conversation context so replies make sense</li>
+            <li>To improve our AI (messages are stored anonymously for future model training)</li>
+          </ul>
+          <p>We process data only as necessary for the service and do not use it for advertising or unrelated purposes.</p>
+        </div>
+      </section>
 
-Data sharing We do not sell, rent, or share your data with third parties, except:
-With Meta APIs (required for Instagram/WhatsApp integration) As legally required (e.g., court orders) With secure service providers (e.g., cloud storage) under strict data protection agreements
+      <!-- Section 3: Data Sharing -->
+      <section class="section">
+        <h3 class="section-title">Data Sharing</h3>
+        <div class="section-content">
+          <p>We do not sell, rent, or share your data with third parties, except:</p>
+          <ul>
+            <li>With Meta APIs (required for Instagram/WhatsApp integration)</li>
+            <li>As legally required (e.g., court orders)</li>
+            <li>With secure service providers (e.g., cloud storage) under strict data protection agreements</li>
+          </ul>
+        </div>
+      </section>
 
-Data storage & security Messages are stored in our secure database Access tokens are encrypted We use HTTPS everywhere Data is kept only while the account is connected + 90 days after disconnection (unless you request deletion earlier) We implement industry-standard security measures to protect against unauthorized access, loss, or alteration.
-Your rights You (the business owner) can:
-Access your stored data Request correction of inaccurate data Request deletion of all stored messages/data at any time (email us; we process within 30 days) Disconnect your accounts in the dashboard Contact us for any questions or complaints Email: muaznaeem841@gmail.com
+      <!-- Section 4: Security -->
+      <section class="section">
+        <h3 class="section-title">Data Storage & Security</h3>
+        <div class="section-content">
+          <p>We implement industry-standard security measures to protect your data:</p>
+          <ul>
+            <li>Messages are stored in our secure database</li>
+            <li>Access tokens are encrypted</li>
+            <li>We use HTTPS everywhere</li>
+            <li>Data is kept only while the account is connected + 90 days after disconnection (unless you request deletion earlier)</li>
+          </ul>
+          <p>We implement industry-standard security measures to protect against unauthorized access, loss, or alteration.</p>
+        </div>
+      </section>
 
-Changes to this policy We may update this policy. We will notify connected businesses via email or in-app notice.
-By connecting your account, you agree to this policy.
+      <!-- Section 5: Your Rights -->
+      <section class="section">
+        <h3 class="section-title">Your Rights</h3>
+        <div class="section-content">
+          <p>You (the business owner) can:</p>
+          <ul>
+            <li>Access your stored data</li>
+            <li>Request correction of inaccurate data</li>
+            <li>Request deletion of all stored messages/data at any time (we process within 30 days)</li>
+            <li>Disconnect your accounts in the dashboard</li>
+            <li>Contact us for any questions or complaints</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Section 6: Policy Updates -->
+      <section class="section">
+        <h3 class="section-title">Changes to This Policy</h3>
+        <div class="section-content">
+          <p>We may update this policy from time to time. We will notify connected businesses via email or in-app notice of any significant changes.</p>
+        </div>
+      </section>
+
+      <!-- Contact Box -->
+      <div class="contact-box">
+        <h3>Questions or Concerns?</h3>
+        <p style="margin-bottom: 16px; color: var(--text-secondary);">We're here to help. Contact us anytime:</p>
+        <button onclick="copyEmail()" class="contact-email">muaznaeem841@gmail.com</button>
+        <span id="copiedNotification" class="copied-notification">✓ Copied!</span>
+      </div>
+
+      <!-- Agreement -->
+      <div class="agreement">
+        By connecting your account to AutoBaat, you acknowledge that you have read and agree to this Privacy Policy.
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <p>© 2026 AutoBaat. All rights reserved.</p>
+    </footer>
+  </div>
+  <script>
+    function copyEmail() {
+      const email = 'muaznaeem841@gmail.com';
+      
+      // Copy to clipboard
+      navigator.clipboard.writeText(email).then(() => {
+        // Show notification
+        const notification = document.getElementById('copiedNotification');
+        notification.classList.add('show');
+        
+        // Hide notification after 2 seconds
+        setTimeout(() => {
+          notification.classList.remove('show');
+        }, 2000);
+      }).catch(err => {
+        // Fallback for older browsers
+        const textArea = document.createElement('textarea');
+        textArea.value = email;
+        textArea.style.position = 'fixed';
+        textArea.style.opacity = '0';
+        document.body.appendChild(textArea);
+        textArea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textArea);
+        
+        // Show notification
+        const notification = document.getElementById('copiedNotification');
+        notification.classList.add('show');
+        setTimeout(() => {
+          notification.classList.remove('show');
+        }, 2000);
+      });
+    }
+  </script>
 </body>
 </html>
